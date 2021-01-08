@@ -1,5 +1,5 @@
   # Use an existing docker image as a base
-FROM node:alpine as builder
+FROM node:14.14.0-alpine as builder
 # set workdirectory
 WORKDIR /app
 # copy package.json first
