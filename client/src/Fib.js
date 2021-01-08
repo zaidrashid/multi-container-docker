@@ -55,7 +55,6 @@ class Fib extends Component {
 
 
   render() {
-    console.log('test');
     return(
       <div>
         <form
