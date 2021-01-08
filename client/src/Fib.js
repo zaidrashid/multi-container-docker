@@ -8,9 +8,13 @@ class Fib extends Component {
     index: '',
   };
 
-  componentDidMount() {
+  doUpdate() {
     this.fetchValues();
     this.fetchIndexes();
+  }
+
+  componentDidMount() {
+    this.doUpdate();
   }
 
   async fetchValues() {
@@ -46,10 +50,12 @@ class Fib extends Component {
       index: this.state.index
     });
     this.setState({ index: '' });
+    this.doUpdate();
   }
 
 
   render() {
+    console.log('test');
     return(
       <div>
         <form
