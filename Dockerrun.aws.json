@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinations": [
+    {
+      "name": "client",
+      "image": "zed182/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "zed182/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "zed182/multi-worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "zed182/multi-nginx",
+      "essential": true,
+      "portMappings": {
+        "hostPort": 80,
+        "containerPort": 80
+      },
+      "links": [
+        "client",
+        "server"
+      ]
+    }
+  ]
+}
